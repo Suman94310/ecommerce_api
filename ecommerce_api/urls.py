@@ -21,6 +21,9 @@ from django.conf.urls.static import static
 
 from django.urls import path, include
 
+from rest_framework.authtoken import views
+
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('products.urls')),
@@ -28,6 +31,10 @@ urlpatterns = [
 
 urlpatterns += [
     path('api-auth/', include('rest_framework.urls')),
+]
+
+urlpatterns += [
+    path('api-token-auth/', views.obtain_auth_token)
 ]
 
 if settings.DEBUG:

@@ -10,7 +10,7 @@ cffi==1.14.1
 chardet==3.0.4
 # chrome-gnome-shell==0.0.0
 cryptography==3.2.1
-cupshelpers==1.0
+# cupshelpers==1.0
 dasbus==1.4
 dbus-python==1.2.16
 decorator==4.4.2

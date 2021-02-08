@@ -63,6 +63,10 @@ class ProductsDetail(mixins.RetrieveModelMixin, mixins.UpdateModelMixin, mixins.
 
 class ItemList(generics.ListAPIView):
     serializer_class =ItemSerializer
+
+    filter_backends = [filters.SearchFilter]
+    search_fields = ['name']
+
     def get_queryset(self):
         """
         Optionally restricts the returned purchases to a given user,

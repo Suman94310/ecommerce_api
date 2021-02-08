@@ -40,7 +40,7 @@ Pillow==7.2.0
 ply==3.11
 productmd==1.30
 ptyprocess==0.6.0
-pwquality==1.4.4
+# pwquality==1.4.4
 pycairo==1.18.2
 pycparser==2.20
 pycrypto==2.6.1

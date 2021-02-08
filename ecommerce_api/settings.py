@@ -26,7 +26,7 @@ SECRET_KEY = '3y3m09=^-$j_uc+9g%&%u1hr5_!&3)-$9rd+vk=+%pm0r+dlgl'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['suman-ecommerce-api.herokuapp.com', '127.0.0.1']
+ALLOWED_HOSTS = ['suman-ecommerce-api.herokuapp.com', '127.0.0.1', 'localhost']
 
 
 # Application definition
@@ -126,6 +126,10 @@ USE_TZ = True
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 STATIC_URL = '/static/'
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, '/media'),
+]
 
 
 MEDIA_ROOT =  os.path.join(BASE_DIR, 'media') 

@@ -65,7 +65,7 @@ pyxdg==0.26
 requests==2.24.0
 requests-file==1.4.3
 requests-ftp==0.3.1
-requests-toolbelt==0.9.1
+# requests-toolbelt==0.9.1
 # rpm==4.16.1.2
 selinux==3.1
 sepolicy==3.1

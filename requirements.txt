@@ -72,7 +72,7 @@ requests-toolbelt==0.9.1
 # setools==4.3.0
 simpleline==1.7
 six==1.15.0
-slip==0.6.4
+# slip==0.6.4
 slip.dbus==0.6.4
 sos==4.0
 soupsieve==2.0.1

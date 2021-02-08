@@ -68,7 +68,7 @@ requests-ftp==0.3.1
 requests-toolbelt==0.9.1
 # rpm==4.16.1.2
 # selinux==3.1
-sepolicy==3.1
+# sepolicy==3.1
 setools==4.3.0
 simpleline==1.7
 six==1.15.0

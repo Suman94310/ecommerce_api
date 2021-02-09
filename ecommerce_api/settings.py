@@ -143,3 +143,8 @@ REST_FRAMEWORK = {
         'rest_framework.authentication.TokenAuthentication',
     ]
 }
+
+
+CORS_ALLOWED_ORIGINS = [
+    "https://serene-northcutt-d697c5.netlify.app/"
+]

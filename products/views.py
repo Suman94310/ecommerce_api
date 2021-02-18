@@ -62,6 +62,8 @@ class ProductsDetail(mixins.RetrieveModelMixin, mixins.UpdateModelMixin, mixins.
         return self.destroy(request, *args, **kwargs)
 
 class ItemList(generics.ListAPIView):
+    permission_classes = [permissions.IsAuthenticatedOrReadOnly]
+
     serializer_class =ItemSerializer
 
     filter_backends = [filters.SearchFilter]
@@ -79,10 +81,14 @@ class ItemList(generics.ListAPIView):
         return queryset
 
 class ItemCreate(generics.CreateAPIView):
+    permission_classes = [permissions.IsAuthenticatedOrReadOnly]
+
     queryset = Item.objects.all()
     serializer_class =ItemSerializer
 
 class ItemUpdate(generics.UpdateAPIView):
+    permission_classes = [permissions.IsAuthenticatedOrReadOnly]
+
     queryset = Item.objects.all()
     serializer_class =ItemSerializer
 

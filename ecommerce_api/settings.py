@@ -150,3 +150,7 @@ REST_FRAMEWORK = {
 CORS_ALLOWED_ORIGINS = [
     "https://serene-northcutt-d697c5.netlify.app"
 ]
+
+CORS_ORIGIN_WHITELIST = [
+    "https://serene-northcutt-d697c5.netlify.app"
+]

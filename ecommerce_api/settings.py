@@ -45,6 +45,8 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
+
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
 
@@ -54,7 +56,6 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'corsheaders.middleware.CorsMiddleware',
 ]
 
 ROOT_URLCONF = 'ecommerce_api.urls'
@@ -151,6 +152,6 @@ CORS_ALLOWED_ORIGINS = [
     "https://serene-northcutt-d697c5.netlify.app"
 ]
 
-CORS_ORIGIN_WHITELIST = [
-    "https://serene-northcutt-d697c5.netlify.app"
-]
+# CORS_ORIGIN_WHITELIST = [
+#     "https://serene-northcutt-d697c5.netlify.app"
+# ]

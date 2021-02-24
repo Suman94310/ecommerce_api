@@ -106,7 +106,8 @@ class TokenToUser(APIView):
         # temp2 = Token.objects.get(key=request.data['token']).user.username
         # temp3 = Profile.objects
         # temp3 = "yo"
-        return Response({'id': user.id, 'username': user.username})
+        print(user.profile.image)
+        return Response({'id': user.id, 'username': user.username, 'image': user.profile.image})
 
 class CreateUser(generics.CreateAPIView):
     queryset = User.objects.all()

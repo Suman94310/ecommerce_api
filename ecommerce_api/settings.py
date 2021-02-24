@@ -149,7 +149,8 @@ REST_FRAMEWORK = {
 # CORS_ORIGIN_ALLOW_ALL = True
 
 CORS_ALLOWED_ORIGINS = [
-    "https://serene-northcutt-d697c5.netlify.app"
+    "https://serene-northcutt-d697c5.netlify.app",
+    "http://172.31.150.13:3000"
 ]
 
 # CORS_ORIGIN_WHITELIST = [

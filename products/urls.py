@@ -8,7 +8,7 @@ urlpatterns = [
     path('users/', views.UserList.as_view()),
     path('tokenToUser/', views.TokenToUser.as_view()),
     path('getUsers/', views.UserDetail.as_view()),
-    path('register', views.CreateUser.as_view()),
+    path('register/', views.CreateUser.as_view()),
     path('createItems/', views.ItemCreate.as_view()),
     path('updateItems/', views.ItemUpdate.as_view()),
     path('ListItems/', views.ItemList.as_view()),

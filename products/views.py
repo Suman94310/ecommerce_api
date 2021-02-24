@@ -101,11 +101,12 @@ class UserDetail(APIView):
 class TokenToUser(APIView):
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
     def post(self, request, *args, **kwargs):
-        temp1 = Token.objects.get(key=request.data['token']).user.id
-        temp2 = Token.objects.get(key=request.data['token']).user.username
-        temp3 = Profile.objects
+        user = Token.objects.get(key=request.data['token']).user
+        # temp1 = Token.objects.get(key=request.data['token']).user.id
+        # temp2 = Token.objects.get(key=request.data['token']).user.username
+        # temp3 = Profile.objects
         # temp3 = "yo"
-        return Response({'id': temp1, 'username': temp2, 'image': temp3})
+        return Response({'id': user.id, 'username': user.username, 'image': user.profile.image})
 
 class CreateUser(generics.CreateAPIView):
     queryset = User.objects.all()

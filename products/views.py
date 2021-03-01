@@ -110,6 +110,7 @@ class TokenToUser(APIView):
         return Response({'id': user.id, 'username': user.username, 'image': user.profile.image.url, 'email': user.email})
 
 class CreateUser(generics.CreateAPIView):
+    permission_classes = [permissions.AllowAny]
     queryset = User.objects.all()
     serializer_class = RegistrationSerializer
 

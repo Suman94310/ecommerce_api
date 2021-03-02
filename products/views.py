@@ -105,11 +105,11 @@ class TokenToUser(APIView, mixins.UpdateModelMixin):
 
     def post(self, request, *args, **kwargs):
         user = Token.objects.get(key=request.data['token']).user
-        return Response({'id': user.id, 'username': user.username, 'image': user.profile.image.url, 'email': user.email, 'cart': user.profile.cart, 'bought': user.profile.bought})
+        return Response({'id': user.id, 'username': user.username, 'image': user.profile.image.url, 'email': user.email})
     
-    def put(self, request, *args, **kwargs):
-        user = Token.objects.get(key=request.data['token']).user
-        return user.update(request, *args, **kwargs)
+    # def put(self, request, *args, **kwargs):
+    #     user = Token.objects.get(key=request.data['token']).user
+    #     return user.update(request, *args, **kwargs)
         
 
 class CreateUser(generics.CreateAPIView):

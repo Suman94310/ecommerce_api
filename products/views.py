@@ -29,8 +29,11 @@ class ProductsList(mixins.ListModelMixin, mixins.CreateModelMixin, generics.Gene
     def get_queryset(self):
         queryset = Products.objects.all()
         bought = self.request.query_params.get('bought', None)
+        owner = self.request.query_params.get('owner', None)
         if bought is not None:
             queryset = queryset.filter(bought=bought)
+        if owner is not None:
+            queryset = queryset.filter(owner=owner)
         return queryset
     
     def get(self, request, *args, **kwargs):

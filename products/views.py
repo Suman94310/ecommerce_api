@@ -98,16 +98,19 @@ class UserDetail(APIView):
         temp = Products.objects.filter(owner=Token.objects.get(key=request.data['token']).user.id)
         return Response(temp)
 
-class TokenToUser(APIView):
+class TokenToUser(APIView, mixins.UpdateModelMixin):
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
+    queryset = Products.objects.all()
+    serializer_class = ProductsSerializer
+
     def post(self, request, *args, **kwargs):
         user = Token.objects.get(key=request.data['token']).user
-        # temp1 = Token.objects.get(key=request.data['token']).user.id
-        # temp2 = Token.objects.get(key=request.data['token']).user.username
-        # temp3 = Profile.objects
-        # temp3 = "yo"
-        # print(user.profile.image)
-        return Response({'id': user.id, 'username': user.username, 'image': user.profile.image.url, 'email': user.email})
+        return Response({'id': user.id, 'username': user.username, 'image': user.profile.image.url, 'email': user.email}, 'cart': user.profile.cart, 'bought': user.profile.bought)
+    
+    def put(self, request, *args, **kwargs):
+        user = Token.objects.get(key=request.data['token']).user
+        return user.update(request, *args, **kwargs)
+        
 
 class CreateUser(generics.CreateAPIView):
     permission_classes = [permissions.AllowAny]

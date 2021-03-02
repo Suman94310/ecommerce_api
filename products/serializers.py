@@ -38,4 +38,4 @@ class RegistrationSerializer(serializers.ModelSerializer):
 class ProfileSerializer(serializers.ModelSerializer):
     class Meta:
         model = Profile
-        fields = ['id', 'username', 'email', 'password', 'image']
+        fields = ['id', 'username', 'email', 'password', 'image', 'cart', 'bought']

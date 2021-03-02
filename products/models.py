@@ -25,7 +25,7 @@ class Item(models.Model):
 
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    image = models.ImageField(default='default.png', upload_to='profile_pics')
+    image = models.ImageField(default='media/default.png', upload_to='profile_pics')
     # bought = models.ManyToManyField(Item, related_name="bought")
     # cart = models.ManyToManyField(Item, related_name="cart")
     

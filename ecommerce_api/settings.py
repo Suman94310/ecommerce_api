@@ -26,7 +26,7 @@ SECRET_KEY = '3y3m09=^-$j_uc+9g%&%u1hr5_!&3)-$9rd+vk=+%pm0r+dlgl'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['suman-ecommerce-api.herokuapp.com', '127.0.0.1', 'localhost']
+ALLOWED_HOSTS = ['suman-ecommerce-api.herokuapp.com', 'http://127.0.0.1', 'localhost']
 
 
 # Application definition
@@ -146,11 +146,12 @@ REST_FRAMEWORK = {
 }
 
 # ALLOWED_HOSTS=['*']
-# CORS_ORIGIN_ALLOW_ALL = True
+# CORS_ORIGIN_ALLOW_ALL = False
 
 CORS_ALLOWED_ORIGINS = [
-    "https://serene-northcutt-d697c5.netlify.app",
-    "http://172.31.150.13:3000"
+    "https://woodsmith.netlify.app",
+    'http://127.0.0.1',
+    "http://localhost"
 ]
 
 # CORS_ORIGIN_WHITELIST = [
